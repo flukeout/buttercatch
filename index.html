@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, World! • A-Frame</title>
+    <meta name="description" content="Hello, World! • A-Frame">
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+    <!-- <a-entity light="color: #FFF; intensity: 2" position="0 4 0"></a-entity> -->
+
+    <a-entity id="parent" position="0 4 0" scale=".5 .5 .5" rotation="0 0 90">
+      <a-collada-model position="0 0 0" src="models/net.dae"></a-collada-model>
+      <a-collada-model position="0 0 0" src="models/net-mesh.dae">
+          <a-animation attribute="scale" dur="1000" fill="forwards" direction="alternate" from="1 -1 1" to="1 1 1"repeat="indefinite"></a-animation>
+      </a-collada-model>
+
+      <a-animation attribute="position" dur="1000" fill="forwards" direction="alternate" from="-1 4 0" to="1 4 0"repeat="indefinite"></a-animation>
+      <a-animation attribute="rotation" dur="1000" fill="forwards" direction="alternate" from="0 0 0" to="0 0 180"repeat="indefinite"></a-animation>
+
+    </a-entity>
+
+
+    <a-collada-model scale=".5 .5 .5" position="0 1 0" src="models/swatter.dae">
+    <a-animation attribute="position" dur="1000" fill="forwards" direction="alternate" from="-.5 1 0" to=".5 1 0"repeat="indefinite"></a-animation>
+    <a-animation attribute="rotation" dur="1000" fill="forwards" direction="alternate" from="0 15 0" to="0 -15 0"repeat="indefinite"></a-animation>
+
+
+  </a-collada-model>
+
+
+    <a-entity id="butterfly" position="0 2 0" scale=".25 .25 .25" rotation="0 0 0">
+
+      <a-animation attribute="position" dur="200" fill="forwards" direction="alternate" from="0 2.1 0" to="0 2 0" repeat="indefinite"></a-animation>
+
+      <a-collada-model position="0 0 0" src="models/butterfly_body.dae"></a-collada-model>
+
+      <a-collada-model position="0 0 0" src="models/butterfly_wing_left.dae">
+        <a-animation attribute="rotation" dur="200" fill="forwards" direction="alternate" from="0 0 -20"to="0 0 20"repeat="indefinite"></a-animation>
+      </a-collada-model>
+
+      <a-collada-model position="0 0 0" src="models/butterfly_wing_right.dae">
+        <a-animation attribute="rotation" dur="200" fill="forwards" direction="alternate" from="0 0 20"to="0 0 -20"repeat="indefinite"></a-animation>
+      </a-collada-model>
+
+
+    </a-entity>
+
+      <!-- <a-cube position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1" color="#4CC3D9"></a-cube> -->
+      <!-- <a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
+      <a-plane rotation="-90 0 0" width="4" height="4" color="#71dd3e"></a-plane>
+      <a-sky color="#7dd1ff"></a-sky>
+      <!-- <a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere> -->
+    </a-scene>
+  </body>
+</html>
+<!--
+
+* z axis into view is .. crazy
+* single value scale should apply it to x,y,z not just x
+* apply colors / shaders to a-collada-model
+* apply animation on TOP of entity-rotation properties instead of replacing?
+  * could add to parent i guess
+* hard to do animations if you only get to from.. how do you return it or go back and forth
+
+* for debugging ,would be nice to persist last view position
+
+
+-->

@@ -4,7 +4,11 @@
     <meta charset="utf-8">
     <title>Hello, World! • A-Frame</title>
     <meta name="description" content="Hello, World! • A-Frame">
+    <!--
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+      -->
+    <script src="http://cdn.rawgit.com/aframevr/aframe/master/dist/aframe.min.js"></script>
+
   </head>
   <body>
     <a-scene>
@@ -26,7 +30,6 @@
     <a-collada-model scale=".5 .5 .5" position="0 1 0" src="models/swatter.dae">
     <a-animation attribute="position" dur="1000" fill="forwards" direction="alternate" from="-.5 1 0" to=".5 1 0"repeat="indefinite"></a-animation>
     <a-animation attribute="rotation" dur="1000" fill="forwards" direction="alternate" from="0 15 0" to="0 -15 0"repeat="indefinite"></a-animation>
-
 
   </a-collada-model>
 

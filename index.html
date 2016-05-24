@@ -34,17 +34,34 @@
   </a-assets>
 
   <a-assets>
-    <a-asset-item id="sketch-obj" src="models/sketch.obj"></a-asset-item>
-    <a-asset-item id="sketch-mtl" src="models/sketch.mtl"></a-asset-item>
+    <a-asset-item id="pointer-obj" src="models/pointer.obj"></a-asset-item>
+    <a-asset-item id="pointer-mtl" src="models/pointer.mtl"></a-asset-item>
   </a-assets>
 
+  <a-assets>
+    <a-asset-item id="phone-obj" src="models/phone.obj"></a-asset-item>
+    <a-asset-item id="phone-mtl" src="models/phone.mtl"></a-asset-item>
+  </a-assets>
 
-    <!-- <a-entity obj-model="obj: #sketch-obj; mtl: #sketch-mtl" physics="debug: true" dynamic-body="shape: box; mass: 2" position='2 0 0'></a-entity> -->
+  <a-assets>
+    <a-asset-item id="oar-obj" src="models/oar.obj"></a-asset-item>
+    <a-asset-item id="oar-mtl" src="models/oar.mtl"></a-asset-item>
+  </a-assets>
 
-    <!-- <a-collada-model scale="1" width="2" height="2" depth="2" position="0 0 0" rotation="0 -70 0" src="models/ricardo.dae" static-body>
+  <a-assets>
+    <a-asset-item id="heart-obj" src="models/heart.obj"></a-asset-item>
+    <a-asset-item id="heart-mtl" src="models/heart.mtl"></a-asset-item>
+  </a-assets>
+
+  <a-assets>
+    <a-asset-item id="oreo-obj" src="models/oreo.obj"></a-asset-item>
+    <a-asset-item id="oreo-mtl" src="models/oreo.mtl"></a-asset-item>
+  </a-assets>
+
+    <a-collada-model scale="1" width="2" height="2" depth="2" position="0 0 0" rotation="0 -70 0" src="models/ricardo.dae" static-body>
       <a-animation attribute="rotation" dur="1000" fill="forwards" direction="alternate" from="0 -70 0" to="0 -120 0"repeat="indefinite"></a-animation>
       <a-animation attribute="scale" dur="250" fill="forwards" direction="alternate" from="1 1 1" to="1 1.1 1 "repeat="indefinite"></a-animation>
-    </a-collada-model> -->
+    </a-collada-model>
 
 
     <a-entity camera
@@ -54,22 +71,12 @@
                position="0 1.5 5"></a-entity>
 
 
-    <!-- <a-entity geometry="primitive: box;" material="color: white; opacity: 0.4" position="4 5 0" scale="1 2 1" dynamic-body>
-     <a-collada-model scale=".5 .25 .5" position="0 -.5 0" src="models/ricardo.dae"></a-collada-model>
-    </a-entity> -->
-
-
-
-
-
     <a-box id="box"
                 color="#DD9922"
                 visible="false"
                 width="2" height="6" depth="2"
                 position="0 0 0"
                 static-body>
-
-
       </a-box>
 
 
@@ -87,8 +94,12 @@
                 color="#FFF"
                 radius="15" height=".1"
                 position="0 -.2 0"
-                static-body>
+
+                static-body="shape: box; mass: 2">
       </a-cylinder>
+
+
+
 
 
 

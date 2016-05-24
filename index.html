@@ -7,10 +7,10 @@
 
     <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js"></script>
 
-    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+
     <!--
 
-
+    <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
     <script src="http://cdn.rawgit.com/aframevr/aframe/master/dist/aframe.min.js"></script>      -->
 
     <!--
@@ -61,7 +61,8 @@
     <a-asset-item id="oreo-mtl" src="models/oreo.mtl"></a-asset-item>
   </a-assets>
 
-    <a-collada-model scale="1" width="2" height="2" depth="2" position="0 0 0" rotation="0 -70 0" src="models/ricardo.dae" static-body>
+
+      <a-collada-model scale="1" width="2" height="2" depth="2" position="0 0 0" rotation="0 -70 0" src="models/ricardo.dae" static-body>
       <a-animation attribute="rotation" dur="1000" fill="forwards" direction="alternate" from="0 -70 0" to="0 -120 0"repeat="indefinite"></a-animation>
       <a-animation attribute="scale" dur="250" fill="forwards" direction="alternate" from="1 1 1" to="1 1.1 1 "repeat="indefinite"></a-animation>
     </a-collada-model>
@@ -79,6 +80,7 @@
                 visible="false"
                 width="2" height="6" depth="2"
                 position="0 0 0"
+                physics="debug: true"
                 static-body>
       </a-box>
 

@@ -4,23 +4,97 @@
     <meta charset="utf-8">
     <title>Hello, World! • A-Frame</title>
     <meta name="description" content="Hello, World! • A-Frame">
-    <!--
+
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
-      -->
-    <script src="http://cdn.rawgit.com/aframevr/aframe/master/dist/aframe.min.js"></script>
+    <!--
+
+    <script src="http://cdn.rawgit.com/aframevr/aframe/master/dist/aframe.min.js"></script>      -->
+
+    <!--
+    <script type="text/javascript" src="physics.js"></script>
+
+    -->
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.16.0/dist/aframe-extras.min.js"></script>
+
+    <script src="app.js"></script>
+
+
+
 
   </head>
   <body>
     <a-scene>
 
-    <a-collada-model scale="1" position="0 0 0" rotation="0 -70 0" src="models/ricardo.dae">
+
+  <a-assets>
+    <a-asset-item id="sketch-obj" src="models/sketch.obj"></a-asset-item>
+    <a-asset-item id="sketch-mtl" src="models/sketch.mtl"></a-asset-item>
+  </a-assets>
+
+  <a-assets>
+    <a-asset-item id="sketch-obj" src="models/sketch.obj"></a-asset-item>
+    <a-asset-item id="sketch-mtl" src="models/sketch.mtl"></a-asset-item>
+  </a-assets>
+
+
+    <!-- <a-entity obj-model="obj: #sketch-obj; mtl: #sketch-mtl" physics="debug: true" dynamic-body="shape: box; mass: 2" position='2 0 0'></a-entity> -->
+
+    <!-- <a-collada-model scale="1" width="2" height="2" depth="2" position="0 0 0" rotation="0 -70 0" src="models/ricardo.dae" static-body>
       <a-animation attribute="rotation" dur="1000" fill="forwards" direction="alternate" from="0 -70 0" to="0 -120 0"repeat="indefinite"></a-animation>
       <a-animation attribute="scale" dur="250" fill="forwards" direction="alternate" from="1 1 1" to="1 1.1 1 "repeat="indefinite"></a-animation>
+    </a-collada-model> -->
 
 
-    </a-collada-model>
+    <a-entity camera
+               universal-controls
+               kinematic-body
+               jump-ability
+               position="0 1.5 5"></a-entity>
 
-    <!-- <a-entity light="color: #FFF; intensity: 2" position="0 4 0"></a-entity> -->
+
+    <!-- <a-entity geometry="primitive: box;" material="color: white; opacity: 0.4" position="4 5 0" scale="1 2 1" dynamic-body>
+     <a-collada-model scale=".5 .25 .5" position="0 -.5 0" src="models/ricardo.dae"></a-collada-model>
+    </a-entity> -->
+
+
+
+
+
+    <a-box id="box"
+                color="#DD9922"
+                visible="false"
+                width="2" height="6" depth="2"
+                position="0 0 0"
+                static-body>
+
+
+      </a-box>
+
+
+    <!-- <a-box id="box"
+                color="#DD9922"
+                width="2" height="2" depth="2"
+                position="0 6 0"
+
+
+                dynamic-body>
+      </a-box> -->
+
+
+    <a-cylinder id="ground"
+                color="#FFF"
+                radius="15" height=".1"
+                position="0 -.2 0"
+                static-body>
+      </a-cylinder>
+
+
+
+
+       <!-- <a-entity light="color: #FFF; intensity: 2" position="0 4 0"></a-entity> -->
+
 
     <!-- <a-entity id="parent" position="0 4 0" scale=".5 .5 .5" rotation="0 0 90">
       <a-collada-model position="0 0 0" src="models/net.dae"></a-collada-model>
@@ -60,7 +134,10 @@
 
       <!-- <a-cube position="-1 0.5 1" rotation="0 45 0" width="1" height="1" depth="1" color="#4CC3D9"></a-cube> -->
       <!-- <a-cylinder position="1 0.75 1" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
-      <a-plane rotation="-90 0 0" width="20" height="20" color="#FFF"></a-plane>
+      <!-- <a-plane rotation="-90 0 0" width="20" height="20" color="#FFF"></a-plane> -->
+
+
+
       <a-sky color="#026dff"></a-sky>
       <!-- <a-sphere position="0 1.25 -1" radius="1.25" color="#EF2D5E"></a-sphere> -->
     </a-scene>

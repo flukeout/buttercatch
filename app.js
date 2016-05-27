@@ -16,8 +16,6 @@ $(document).on("ready",function(){
     var entity = $("<a-entity></a-entity>");
     entity.attr("rotation","0 "  + angle + " 0");
 
-    console.log(letter);
-
     var height = getRandom(0,60);
     var distance = getRandom(-55,-90);
 
@@ -28,13 +26,20 @@ $(document).on("ready",function(){
 
     var image = $('<a-image rotation="'+imageRot+' 0 0"  height="15" width="50" position="0 '+height+' '+distance+'">');
 
-    var start = getRandom(-10, 40);
-    var end = start + 20;
+    if(i % 2) {
+      var start = getRandom(10, 20);
+      var end = start + 20;
+
+    } else {
+      var start = getRandom(20, 40);
+      var end = start + 20;
+
+    }
+
     var dur = getRandom(5000,15000)
 
-
     entity.append('<a-animation attribute="rotation" dur="40000" easing="linear" from="0 '+angle+' 0" to="0 '+(angle + 360)+' 0" repeat="indefinite"/>');
-    entity.append('<a-animation attribute="position" dur="'+dur+'" direction="alternate" from="0 '+start+' 0" to="0 '+end+' 0" repeat="indefinite"/>');
+    entity.append('<a-animation attribute="position" dur="'+dur+'" direction="alternate" from="0 '+(start - 20) +' 0" to="0 '+(end - 20) +' 0" repeat="indefinite"/>');
 
     image.attr("src","thanks/"+letter+".png");
 

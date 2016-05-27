@@ -2,34 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello, World! • A-Frame</title>
-    <meta name="description" content="Hello, World! • A-Frame">
+    <title>Farewell, Ricardo!</title>
 
 
+    <script src="sounds.js"></script>
     <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
-
-    <!--
-    <script src="https://rawgit.com/aframevr/aframe/master/dist/aframe.min.js"></script>
-
-    <script src="http://cdn.rawgit.com/aframevr/aframe/master/dist/aframe.min.js"></script>      -->
-
-    <!--
-    <script type="text/javascript" src="physics.js"></script>
-
-    -->
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v1.16.0/dist/aframe-extras.min.js"></script>
 
     <script src="app.js"></script>
 
-
-
-
   </head>
   <body>
     <a-scene>
 
+  <a-assets>
+    <a-asset-item id="guitar-obj" src="models/guitar.obj"></a-asset-item>
+    <a-asset-item id="guitar-mtl" src="models/guitar.mtl"></a-asset-item>
+  </a-assets>
 
   <a-assets>
     <a-asset-item id="sketch-obj" src="models/sketch.obj"></a-asset-item>
@@ -47,6 +38,12 @@
   </a-assets>
 
   <a-assets>
+    <a-asset-item id="toucan-obj" src="models/toucan.obj"></a-asset-item>
+    <a-asset-item id="toucan-mtl" src="models/toucan.mtl"></a-asset-item>
+  </a-assets>
+
+
+  <a-assets>
     <a-asset-item id="oar-obj" src="models/oar.obj"></a-asset-item>
     <a-asset-item id="oar-mtl" src="models/oar.mtl"></a-asset-item>
   </a-assets>
@@ -60,13 +57,13 @@
     <a-asset-item id="oreo-obj" src="models/oreo.obj"></a-asset-item>
     <a-asset-item id="oreo-mtl" src="models/oreo.mtl"></a-asset-item>
   </a-assets>
-<!--
 
-      <a-collada-model scale="1" width="2" height="2" depth="2" position="0 0 0" rotation="0 -70 0" src="models/ricardo.dae" static-body>
+
+    <a-collada-model id="ricardo" scale="1" width="2" height="2" depth="2" position="0 0 0" rotation="0 -70 0" src="models/ricardo.dae" static-body>
       <a-animation attribute="rotation" dur="1000" fill="forwards" direction="alternate" from="0 -70 0" to="0 -120 0"repeat="indefinite"></a-animation>
-      <a-animation attribute="scale" dur="250" fill="forwards" direction="alternate" from="1 1 1" to="1 1.1 1 "repeat="indefinite"></a-animation>
+      <!-- <a-animation attribute="scale" dur="250" fill="forwards" direction="alternate" from="1 1 1" to="1 1.1 1 "repeat="indefinite"></a-animation> -->
     </a-collada-model>
-  -->
+
 
 
     <a-entity camera
@@ -75,13 +72,13 @@
                jump-ability
                position="0 1.5 5"></a-entity>
 
-
-    <a-box id="box"
+    <a-box id="head"
                 color="#DD9922"
                 visible="false"
+                size="1"
+                scale="1"
                 width="2" height="6" depth="2"
                 position="0 0 0"
-                physics="debug: true"
                 static-body>
       </a-box>
 
@@ -90,8 +87,6 @@
                 color="#DD9922"
                 width="2" height="2" depth="2"
                 position="0 6 0"
-
-
                 dynamic-body>
       </a-box> -->
 
@@ -100,6 +95,7 @@
                 color="#FFF"
                 radius="15" height=".1"
                 position="0 -.2 0"
+
 
                 static-body="shape: box; mass: 2"
                 >
